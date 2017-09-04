@@ -1,18 +1,26 @@
 <html>
   <head>
     <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css">
-    <title><%= title %></title>
+    <title>babyControl</title>
   </head>
   <body>
-    <div class="container jumbotron" align="center">
+    <div class="jumbotron" align="center">
       <h3>Painel de controle baby</h3>
     </div>
-
-      </div>
       <script src="jquery/dist/jquery.min.js">
       </script>
       <script type="text/javascript" src="bootstrap/dist/js/bootstrap.min.js">
-
       </script>
+      <div class="jumbotron">
+        <table class="table inverse">
+          <tr>
+            <td width="20%"><% estudantes.forEach(function(estudante){ %>
+                <%= estudante.nome %><br>
+                <% }); %>
+            </td>
+            <td width="80%">coluna 2</td>
+          </tr>
+        </table>
+      </div>
   </body>
 </html>

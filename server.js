@@ -11,7 +11,6 @@ app.use(express.static(path.join(__dirname,'node_modules')));
 
 //utiliza router [arquivo]
 app.use(require('./router'));
-
 app.listen(1337,function(){
-  console.log('Escutando na porta 1337')
+  console.log('Escutando na porta 1337');
 });
