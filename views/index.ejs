@@ -1,26 +1,42 @@
 <html>
   <head>
     <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css">
-    <title>babyControl</title>
+    <script src="js/jquery.js"></script>
+    <link href="css/style2.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/scripts.js">
+    </script>
+    <script>
+    $(function(){
+        $(".divAfetacao").click(function(e){
+            e.preventDefault();
+            el = $(this).data('element');
+            $(el).toggle();
+        });
+    });
+    </script>
+    <title>Afetação</title>
   </head>
   <body>
-    <div class="jumbotron" align="center">
-      <h3>Painel de controle baby</h3>
+    <div class="page-header" align="center">
+      <h3>Controle de Afetação - RB#LC04</h3>
     </div>
       <script src="jquery/dist/jquery.min.js">
       </script>
       <script type="text/javascript" src="bootstrap/dist/js/bootstrap.min.js">
       </script>
-      <div class="jumbotron">
-        <table class="table inverse">
-          <tr>
-            <td width="20%"><% estudantes.forEach(function(estudante){ %>
-                <%= estudante.nome %><br>
-                <% }); %>
-            </td>
-            <td width="80%">coluna 2</td>
-          </tr>
-        </table>
+      <div width="20%">
+          <% include menu %>
       </div>
+      <div id="afetacaoEricsson" class="divAfetacao" align="center">
+        <% include forms/formEricsson %>
+      </div>
+      <div id="afetacaoHuaweiGtw" class="divAfetacao" align="center">
+        <% include forms/formHuaweiGtw %>
+      </div>
+      <div id="afetacaoPts" class="divAfetacao" align="center">
+        <% include forms/formPts %>
+      </div>
+
   </body>
 </html>
