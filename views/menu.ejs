@@ -1,29 +1,25 @@
 <div class="nav-side-menu">
     <div class="brand">Menu</div>
-    <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+    <li class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></li>
 
         <div class="menu-list">
 
             <ul id="menu-content" class="menu-content collapse out">
-                <li>
-                  <a href="#">
-                  <i class="fa fa-cog  fa fa-fw"></i> Perfil
-                  </a>
-                </li>
-
                 <li  data-toggle="collapse" data-target="#products" class="collapsed active">
-                  <a href="#"><i class="fa fa-cog  fa fa-fw"></i> Cadastrar Afetação </a>
+                  <a href="#"><i class="fa fa-gift fa-lg"></i> Tecnologias <span class="arrow"></span></a>
                 </li>
                 <ul class="sub-menu collapse" id="products">
-                    <li class="active"><a class="divAfetacao" data-element="#afetacaoEricsson" >Ericsson MGC</a></li>
-                    <li><a   class="divAfetacao" data-element="#afetacaoHuaweiGtw">Huawei MSOFTX3000 / UMG8900</a></li>
-                    <li><a   class="divAfetacao" data-element="#afetacaoPts">PTS HUAWEI</a></li>
+                    <li data-toggle="collapse" data-target="#ericsson" class="collapsed active" ><a href="#">Ericsson</a></li>
+                    <ul class="sub-menu collapse" id="ericsson">
+                        <li class="collapsed" ><a href="#" class="cadastrarEricsson">-Cadastrar circuito individual</a></li>
+                        <li class="collapsed"><a href="#" class="consultarEricsson">-Pesquisar</a></li>
+                    </ul>
+                    <li data-toggle="collapse" data-target="#huawei" class="collapsed active"><a href="#">Huawei</a></li>
+                    <ul class="sub-menu collapse" id="huawei">
+                        <li class="collapsed" ><a class="cadastrarHuawei" href="#">-Cadastrar</a></li>
+                        <li class="collapsed"><a class="consultarHuawei" href="#">-Pesquisar</a></li>
+                    </ul>
                 </ul>
-                <li>
-                  <a href="#">
-                  <i class="fa fa-pencil fa-fw"></i> Fale conosco
-                  </a>
-                </li>
-            </ul>
-     </div>
-</div>
+                <li data-toggle="collapse" data-target="#service" class="collapsed"></li>
+          </div>
+  </div>

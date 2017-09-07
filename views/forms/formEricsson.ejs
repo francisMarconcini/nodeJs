@@ -1,9 +1,8 @@
-<div class="container col-md-3 col-md-offset-5">
-  <form class="control-group" action="afetacaoEricssonCadastrar" method="post">
+  <form action="/afetacaoEricssonCadastrar" method="post">
     <table>
       <tr>
         <td><label for="mgc" class="label label-default">MGC:</label></td>
-        <td><input type="text" name="mgc" maxlength="7" class="form-control" placeholder="EX:MGCBFEB" ></td>
+        <td><input type="text" name="mgc" maxlength="7" class="form-control"  placeholder="EX:MGCBFEB" ></td>
       </tr>
       <tr>
         <td><label for="mgw" class="label label-default">MGW:</label></td>
@@ -11,20 +10,59 @@
       </tr>
       <tr>
         <td><label for="rota" class="label label-default">ROTA:</label></td>
-        <td><input type="text" name="rota" maxlength="7" class="form-control" placeholder="EX:BCBFEEI/O" ></td>
+        <td><input type="text" name="rota" maxlength="12" class="form-control" placeholder="EX:BCBFEEI/O" ></td>
       </tr>
       <tr>
         <td><label for="opc" class="label label-default">OPC:</label></td>
-        <td><input type="number" name="opc" maxlength="7" class="form-control" placeholder="3-16631" ></td>
+        <td><input type="text" name="opc" maxlength="7" class="form-control" placeholder="EX:3-16631" ></td>
       </tr>
       <tr>
-        <td><label for="dpc" class="label label-default">MGC:</label></td>
-        <td><input type="number" name="dpc" maxlength="7" class="form-control" placeholder="3-5083" ></td>
+      <td><label for="dpc" class="label label-default">DPC:</label></td>
+      <td><input type="text" name="dpc" maxlength="7" class="form-control" placeholder="EX:3-5083" ></td>
+      </tr>
+      <tr>
+        <td><label for="snt" class="label label-default">SNT MSC:</label></td>
+        <td><input type="text" name="snt" maxlength="12" class="form-control" placeholder="EX:RTDMA-2265" ></td>
+      </tr>
+      <tr>
+        <td><label for="device" class="label label-default">DEVICE:</label></td>
+        <td><input type="text" name="device" maxlength="7" class="form-control" placeholder="EX:UPDR-2265&&-2295" ></td>
+      </tr>
+      <tr>
+        <td><label for="klm" class="label label-default">KLM:</label></td>
+        <td><input type="text" name="klm" maxlength="3" class="form-control" placeholder="EX:112" ></td>
+      </tr>
+      <tr>
+        <td><label for="cic" class="label label-default">CIC:</label></td>
+        <td><input type="text" name="cic" maxlength="7" class="form-control" placeholder="EX:1-31" ></td>
+      </tr>
+      <tr>
+        <td><label for="placaMgw" class="label label-default">BRD MGW:</label></td>
+        <td><input type="text" name="placaMgw" maxlength="60" class="form-control" placeholder="EX:MOD4-25-4 ET-C41- POS IN CCF : (TX) 03*22/51*17   -  (RX) 03*22/51*19" ></td>
+      </tr>
+      <tr>
+        <td><label for="dgoPlaca" class="label label-default">DGO PLACA:</label></td>
+        <td><input type="text" name="dgoPlaca" maxlength="60" class="form-control" placeholder="EX:POS IN DGO : (TX) DIO/06*B01  - (RX) DIO/06*B02" ></td>
+      </tr>
+      <tr>
+        <td><label for="placaProt" class="label label-default">BRD MGW [proteção]:</label></td>
+        <td><input type="text" name="placaProt" maxlength="60" class="form-control" placeholder="EX:MOD4-26-4  ET-C41- POS IN CCF : (TX) 03*22/51*17   -  (RX) 03*22/51*19" ></td>
+      </tr>
+      <tr>
+        <td><label for="dgoProt" class="label label-default">DGO PLACA [proteção]:</label></td>
+        <td><input type="text" name="dgoProt" maxlength="60" class="form-control" placeholder="EX:POS IN DGO : (TX) DIO/06*B01  - (RX) DIO/06*B02" ></td>
+      </tr>
+      <tr>
+        <td><label for="idRota" class="label label-default">ID ROTA/LD:</label></td>
+        <td><input type="number" name="idRota" maxlength="20" class="form-control" placeholder="EX:123786" ></td>
+      </tr>
+      <tr>
+        <td><label for="observacao" class="label label-default">Observação:</label></td>
+        <td><input type="text" name="observacao" maxlength="600" class="form-control" placeholder="Forneça alguma informação a mais..." ></td>
       </tr>
     </table>
     <br>
-    <div class="container col-md-3 col-md-offset-5">
+    <div class="container col-md-3">
       <input type="submit" value="cadastrar" class="btn btn-secondary">
     </div>
   </form>
-</div>

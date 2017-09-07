@@ -5,8 +5,6 @@ afetacaoEricsson = require('./controllers/afetacaoEricsson');
 router.get('/',function(request,response){
   response.render('index');
 });
-router.post('/afetacaoEricssonCadastrar',function(request,response){
-  console.log('xoxota');
-});
+router.post('/afetacaoEricssonCadastrar',afetacaoEricsson.cadastra);
 
 module.exports = router;

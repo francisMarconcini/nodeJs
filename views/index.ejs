@@ -1,42 +1,25 @@
 <html>
   <head>
-    <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css">
-    <script src="js/jquery.js"></script>
-    <link href="css/style2.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/scripts.js">
-    </script>
-    <script>
-    $(function(){
-        $(".divAfetacao").click(function(e){
-            e.preventDefault();
-            el = $(this).data('element');
-            $(el).toggle();
-        });
-    });
-    </script>
     <title>Afetação</title>
+    <script type="text/javascript" src="jquery/jquery-2.2.4.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="js/scripts.js">
+
+    </script>
+    <script type="text/javascript" src="js/bootstrap.min.js"> </script>
   </head>
   <body>
     <div class="page-header" align="center">
       <h3>Controle de Afetação - RB#LC04</h3>
     </div>
-      <script src="jquery/dist/jquery.min.js">
-      </script>
-      <script type="text/javascript" src="bootstrap/dist/js/bootstrap.min.js">
-      </script>
-      <div width="20%">
+    <div class="row">
+      <div class="col-md-2">
           <% include menu %>
       </div>
-      <div id="afetacaoEricsson" class="divAfetacao" align="center">
+      <div id="cadastrarEricsson" class="col-sm-9 col-md-offset-5">
         <% include forms/formEricsson %>
       </div>
-      <div id="afetacaoHuaweiGtw" class="divAfetacao" align="center">
-        <% include forms/formHuaweiGtw %>
-      </div>
-      <div id="afetacaoPts" class="divAfetacao" align="center">
-        <% include forms/formPts %>
-      </div>
-
+    </div>
   </body>
 </html>
