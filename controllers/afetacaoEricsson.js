@@ -1,6 +1,9 @@
 exports.cadastra = function(request,response){
-
-  var insertMongo = require('../models/cadastraEricsson');
+var mongoose = require('mongoose');
+  var insertMongo = require('../models/cadastraEricsson')(mongoose);
+  var mongo = require('mongoose');
+  var uri='mongodb://localhost/afetacao';
+  mongoose.connect(uri);
 
   var mgc = request.body.mgc;
   var mgw = request.body.mgw;
@@ -38,10 +41,17 @@ exports.cadastra = function(request,response){
     "dataAtualizacao": new Date(),
     "usuario":"Francis de Melo Marconcini"
   };
-  var insercao = new insertMongo();
-  var ins = insercao(json);
-  ins.save(function(data){
-  response.redirect('/');
-  mongo.connection.close();
-});
+
+  mongoose.connection.once('open', function () {
+    var insercao = new insertMongo(json);
+    insercao.save(function(data) {
+    response.redirect('/');
+  });
+  });
+
+  mongoose.connection.on('error',function (err) {
+    console.log('Mongodb com erro de conexão: ' + err);
+    response.end("Falha ao se conectar no banco de dados, tente novamente mais tarde.");
+    return err;
+  });
 }

@@ -1,12 +1,7 @@
-function modeloCadastroEricsson(){
-  var mongo = require('mongoose');
-  var uri='mongodb://localhost/afetacao';
-  mongo.connect(uri);
+  module.exports = function(mongoose){
 
-  mongo.connection.once('open', function () {
   //  console.log('Conexão aberta no mongodb ' + uri);
-    var Schema = mongo.Schema;
-    var cadEricssonSchema = new Schema({
+    var cadEricssonSchema = new mongoose.Schema({
       mgc: String,
       mgw: String,
       rota: String,
@@ -27,14 +22,7 @@ function modeloCadastroEricsson(){
       usuario:[String]
     });
 
-  var afetacaoEricsson = mongo.model('afetacaoEricsson',cadEricssonSchema);
+  var afetacaoEricsson = mongoose.model('afetacaoEricsson',cadEricssonSchema);
   return afetacaoEricsson;
-  });
 
-  mongo.connection.on('error',function (err) {
-    console.log('Mongodb com erro de conexão: ' + err);
-    response.end("Falha ao se conectar no banco de dados, tente novamente mais tarde.");
-  });
 }
-
-module.exports = modeloCadastroEricsson;
