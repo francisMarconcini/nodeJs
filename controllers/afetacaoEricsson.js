@@ -1,9 +1,11 @@
 exports.cadastra = function(request,response){
 var mongoose = require('mongoose');
   var insertMongo = require('../models/cadastraEricsson')(mongoose);
-  var mongo = require('mongoose');
   var uri='mongodb://localhost/afetacao';
-  mongoose.connect(uri);
+  mongoose.Promise = global.Promise;
+
+    mongoose.connect(uri); //- starting a db connection
+
 
   var mgc = request.body.mgc;
   var mgw = request.body.mgw;
@@ -43,15 +45,27 @@ var mongoose = require('mongoose');
   };
 
   mongoose.connection.once('open', function () {
+    console.log("conexao estabelecida");
     var insercao = new insertMongo(json);
-    insercao.save(function(data) {
-    response.redirect('/');
-  });
-  });
 
-  mongoose.connection.on('error',function (err) {
+    insercao.save(function(err) {
+  if (err) throw err;
+
+  console.log('Register saved successfully!');
+  mongoose.disconnect();
+  response.redirect('/');
+
+});
+
+});
+  mongoose.connection.once('error',function (err) {
     console.log('Mongodb com erro de conexão: ' + err);
     response.end("Falha ao se conectar no banco de dados, tente novamente mais tarde.");
     return err;
+  });
+
+  mongoose.connection.once('disconnect',function (err) {
+    console.log(err);
+    console.log('desconectado!');
   });
 }

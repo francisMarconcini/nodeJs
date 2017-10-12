@@ -8,6 +8,23 @@
 
     </script>
     <script type="text/javascript" src="js/bootstrap.min.js"> </script>
+    <script>
+
+    $(document).ready(function(){
+
+      $( "#cadEricsson" ).click(function() {
+        $( "#consultarEricsson" ).hide();
+        $( "#cadastrarHuawei" ).hide();
+       });
+
+       $( "#conEricsson" ).click(function() {
+         $( "#cadastrarEricsson" ).hide();
+         $( "#cadastrarHuawei" ).hide();
+        });
+
+
+     });
+    </script>
   </head>
   <body>
     <div class="page-header" align="center">
@@ -19,6 +36,9 @@
       </div>
       <div id="cadastrarEricsson" class="col-sm-9 col-md-offset-5">
         <% include forms/formEricsson %>
+      </div>
+      <div id="consultarEricsson" class="col-sm-9 col-md-offset-5">
+        <% include forms/formEricssonPesquisar %>
       </div>
     </div>
   </body>

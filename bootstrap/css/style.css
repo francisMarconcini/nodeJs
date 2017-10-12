@@ -146,7 +146,12 @@ body {
 
 #cadastrarEricsson{
   display:none;
-};
+}
+
+#consultarEricsson{
+  display:none;
+}
+
 #cadastrarHuawei{
   display:none;
-};
+}

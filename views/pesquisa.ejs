@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <title>Afetação</title>
+    <script type="text/javascript" src="jquery/jquery-2.2.4.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="js/scripts.js">
+
+    </script>
+    <script type="text/javascript" src="js/bootstrap.min.js"> </script>
+  </head>
+  <body>
+    <div class="container">
+    <div class="page-header" align="center">
+      <h3>Controle de Afetação - RB#LC04</h3>
+    </div>
+    <div class="row">
+    <table align="center" border='1'>
+    <thead>
+      <tr><th>MGC</th><th>MGW</th><th>ROTA</th><th>OPC</th><th>DPC</th><th>SNT</th><th>DEVICE</th><th>KLM</th><th>CIC</th><th>PLACA MGW</th><th>DGO</th><th>PLACA PROTEÇÃO</th><th>DGO PROTEÇÃO</th><th>ID ROTA/LD</th><th>DATA INSERÇÃO</th><th>USUÁRIO</th><th>DATA ATUALIZAÇÃO</th><th>OBSERVAÇÃO</th></tr>
+    </thead>
+    <% for(var i=0 ; i < pesquisa.length ; i++) {%>
+    <tr><td><%= JSON.stringify(pesquisa[i].mgc) %></td><td><%= JSON.stringify(pesquisa[i].mgw) %></td><td><%= JSON.stringify(pesquisa[i].rota) %></td><td><%= JSON.stringify(pesquisa[i].opc) %></td><td><%= JSON.stringify(pesquisa[i].dpc) %></td><td><%= JSON.stringify(pesquisa[i].snt) %></td><td><%= JSON.stringify(pesquisa[i].device) %></td><td><%= JSON.stringify(pesquisa[i].klm) %></td><td><%= JSON.stringify(pesquisa[i].cic) %></td><td><%= JSON.stringify(pesquisa[i].placaMgw) %></td><td><%= JSON.stringify(pesquisa[i].dgoPlaca) %></td><td><%= JSON.stringify(pesquisa[i].placaProt) %></td><td><%= JSON.stringify(pesquisa[i].dgoProt) %></td><td><%= JSON.stringify(pesquisa[i].idRota) %></td><td><%= JSON.stringify(pesquisa[i].dataInsercao) %></td><td><% for(var cont2=0;cont2 < pesquisa[i].usuario.length;cont2++){ JSON.stringify(pesquisa[i].usuario[cont2]) } %></td><td><% for(var cont2=0;cont2 < pesquisa[i].dataAtualizacao.length;cont2++){ JSON.stringify(pesquisa[i].dataAtualizacao[cont2]) } %></td><td><% for(var cont2=0;cont2 < pesquisa[i].observacao.length;cont2++){ JSON.stringify(pesquisa[i].observacao[cont2]) } %></td></tr>
+    <% } %>
+    </table>
+    </div>
+  </div>
+  </body>
+</html>
